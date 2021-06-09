@@ -42,6 +42,9 @@ class CoreStoreSembastImp implements CoreStore {
   final Database _database;
   final StoreRef<String, dynamic> _store;
 
+  StoreRef<String, dynamic> get store => _store;
+  Database get database => _database;
+
   @override
   Future<bool> clear() {
     return _store.drop(_database) as Future<bool>;
